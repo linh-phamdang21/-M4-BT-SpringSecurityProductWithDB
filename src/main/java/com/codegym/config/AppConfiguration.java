@@ -2,6 +2,8 @@ package com.codegym.config;
 
 import com.codegym.service.ProductService;
 import com.codegym.service.ProductServiceImpl;
+import com.codegym.service.user.AppUserServiceImpl;
+import com.codegym.service.user.IAppUserService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cglib.core.Local;
@@ -152,4 +154,8 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
         return localeResolver;
     }
 
+    @Bean
+    public IAppUserService appUserService(){
+        return new AppUserServiceImpl();
+    }
 }
